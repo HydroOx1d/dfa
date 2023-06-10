@@ -5,6 +5,9 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      padding: '0 10px'
+    },
     colors: {
       black: '#111111',
       white: '#F9F9F9',

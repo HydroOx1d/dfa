@@ -30,29 +30,29 @@ export default function Card({ data }: Props) {
       </Link>
 
       <div className="flex justify-between items-start mt-5">
-        <div className="flex flex-col justify-start">
+        <div className="flex flex-col justify-start flex-1">
           <span className="text-darkGray text-sm">Цена за слиток</span>
           <span className="text-orange text-base font-bold">{data.price}</span>
         </div>
-        <div className="flex flex-col justify-start">
+        <div className="flex flex-col justify-start flex-1 ml-1.5">
           <span className="text-darkGray text-sm">Ширина , мм</span>
           <span className="text-darkGray text-base font-normal">{data.height}</span>
         </div>
-        <div className="flex flex-col justify-start">
+        <div className="flex flex-col justify-start flex-1 ml-1.5">
           <span className="text-darkGray text-sm">Проба</span>
           <span className="text-darkGray text-base font-normal">{data.sampe}</span>
         </div>
       </div>
       <div className="flex justify-between items-start mt-5">
-        <div className="flex flex-col justify-start">
+        <div className="flex flex-col justify-start flex-1">
           <span className="text-darkGray text-sm">Масса, г</span>
           <span className="text-darkGray text-base font-bold">{data.mass}</span>
         </div>
-        <div className="flex flex-col justify-start">
+        <div className="flex flex-col justify-start flex-1 ml-2.5">
           <span className="text-darkGray text-sm">Длина, мм</span>
           <span className="text-darkGray text-base font-normal">{data.height}</span>
         </div>
-        <div className="flex flex-col justify-start">
+        <div className="flex flex-col justify-start flex-1 ml-2.5">
           <span className="text-darkGray text-sm">Карат</span>
           <span className="text-darkGray text-base font-normal">{data.carat}</span>
         </div>

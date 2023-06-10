@@ -17,7 +17,7 @@ export default function FilterDropdown({
 }: Props) {
   return (
     <div className="flex-column mx-1">
-      <p className="text-sm text-darkGray mb-1.5">
+      <p className="text-sm text-darkGray mb-1.5 text-start">
         {propartyName}
         :
       </p>

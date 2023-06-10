@@ -39,14 +39,16 @@ export default function ProductsFilter() {
   }
 
   return (
-    <div className="mt-16 flex items-end">
-      <FilterDropdown propartyName="Вес" options={dropDown.weights} clickHandleOption={setWeight} value={weight} />
-      <FilterDropdown propartyName="Проба / Карат" options={dropDown.carat} clickHandleOption={setCarat} value={carat} />
-      <FilterPrice changeHandleFromPrice={setPriceFrom} value={priceFrom} propartyName="Цена от" />
-      <FilterPrice changeHandleFromPrice={setriceTo} value={priceTo} propartyName="Цена до" />
+    <div className="mt-16 flex flex-col lg:flex-row lg:items-end">
+      <div className="grid grid-cols-2 lg:flex lg:items-end">
+        <FilterDropdown propartyName="Вес" options={dropDown.weights} clickHandleOption={setWeight} value={weight} />
+        <FilterDropdown propartyName="Проба / Карат" options={dropDown.carat} clickHandleOption={setCarat} value={carat} />
+        <FilterPrice changeHandleFromPrice={setPriceFrom} value={priceFrom} propartyName="Цена от" />
+        <FilterPrice changeHandleFromPrice={setriceTo} value={priceTo} propartyName="Цена до" />
+      </div>
       <button
         onClick={submitHandler}
-        className={`bg-orange text-white ${styles.general}`}
+        className={`mt-4 w-full lg:w-40 lg:mt-0 ${styles.general_btn}`}
       >
         Найти золото
       </button>

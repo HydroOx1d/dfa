@@ -1,3 +1,7 @@
 .general {
-    @apply w-40 h-12 rounded-full px-3 py-2 text-sm py-4 px-5 outline-none;
+    @apply max-w-[160px] w-full h-12 rounded-full px-3 py-2 text-sm py-4 px-5 outline-none;
   }
+
+.general_btn {
+  @apply bg-orange text-white h-12 rounded-full px-3 py-2 text-sm py-4 px-5 outline-none;
+}
