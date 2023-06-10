@@ -1,8 +1,8 @@
 import React from 'react';
 import './globals.css';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import Header from '@/components/header/Header';
+import { sfProDisplay } from '@/utils/fonts';
+import Footer from '@/components/footer/Footer';
 
 export const metadata = {
   title: 'DFA',
@@ -16,10 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main>
-          {children}
-        </main>
+      <body className={sfProDisplay.className}>
+        <div className="wrapper">
+          <Header />
+          <main className="main">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
