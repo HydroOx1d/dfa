@@ -6,7 +6,7 @@ import Link from 'next/link';
 type Props = {
   data: {
     id: number;
-    name: string;
+    name: string
     price: string;
     carat: number;
     sampe: number;
