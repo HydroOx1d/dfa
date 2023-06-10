@@ -39,7 +39,7 @@ export default function ProductsFilter() {
   }
 
   return (
-    <div className="mt-16 flex flex-col lg:flex-row lg:items-end">
+    <section className="mt-16 flex flex-col lg:flex-row lg:items-end">
       <div className="grid grid-cols-2 lg:flex lg:items-end">
         <FilterDropdown propartyName="Вес" options={dropDown.weights} clickHandleOption={setWeight} value={weight} />
         <FilterDropdown propartyName="Проба / Карат" options={dropDown.carat} clickHandleOption={setCarat} value={carat} />
@@ -52,6 +52,6 @@ export default function ProductsFilter() {
       >
         Найти золото
       </button>
-    </div>
+    </section>
   );
 }

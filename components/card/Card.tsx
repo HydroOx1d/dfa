@@ -3,17 +3,18 @@ import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 import { HeartIcon, PlusIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
+export type GoldInfo = {
+  id: number;
+  name: string
+  price: string;
+  carat: number;
+  sampe: number;
+  mass: number;
+  width: number;
+  height: number;
+}
 type Props = {
-  data: {
-    id: number;
-    name: string
-    price: string;
-    carat: number;
-    sampe: number;
-    mass: number;
-    width: number;
-    height: number;
-  }
+  data: GoldInfo
 }
 
 export default function Card({ data }: Props) {
