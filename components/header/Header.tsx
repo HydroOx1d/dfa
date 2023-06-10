@@ -26,7 +26,7 @@ function Header() {
           <span className="text-orange">A</span>
         </div>
         <div
-          className={`fixed overflow-auto z-10 bg-bgColor h-screen w-full left-0 top-0 lg:static lg:w-auto lg:h-auto ${
+          className={`fixed lg:block overflow-auto z-10 bg-bgColor h-screen w-full left-0 top-0 lg:static lg:w-auto lg:h-auto ${
             !navIsOpen && 'hidden'
           }`}
         >
