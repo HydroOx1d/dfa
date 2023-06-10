@@ -18,7 +18,7 @@ type Props = {
 
 export default function Card({ data }: Props) {
   return (
-    <article className="p-2.5 bg-lightGray2 w-full sm:max-w-md rounded-md">
+    <article className="p-2.5 bg-lightGray w-full sm:max-w-md rounded-md">
       <Link href={`/products/${data.id}`}>
         <div className="flex justify-between items-start">
           <h3 className="text-lg font-semibold text-darkGray w-56">

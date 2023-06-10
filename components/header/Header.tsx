@@ -3,9 +3,7 @@
 import React from 'react';
 import { jetBrainsMono } from '@/utils/fonts';
 import Link from 'next/link';
-import basket from '@/assets/basket.svg';
-import wish from '@/assets/wish.svg';
-import Image from 'next/image';
+import { HeartIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 
 function Header() {
   return (
@@ -20,7 +18,7 @@ function Header() {
             Главная
           </Link>
           <Link
-            href="/catalog"
+            href="/products"
             className="mr-10 hover:text-orange transition-colors"
           >
             Каталог
@@ -29,12 +27,12 @@ function Header() {
             История
           </Link>
         </nav>
-        <div className="flex ml-auto">
+        <div className="flex items-center ml-auto">
           <div className="rounded-full bg-white p-2 cursor-pointer mr-2.5">
-            <Image src={basket} width={24} height={24} alt="basket" />
+            <ShoppingCartIcon className="w-6" />
           </div>
           <div className="rounded-full bg-white p-2 cursor-pointer mr-2.5">
-            <Image src={wish} width={24} height={24} alt="wish list" />
+            <HeartIcon className="w-6" />
           </div>
           <Link
             href="/login"

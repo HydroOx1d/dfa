@@ -4,10 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import golden from '@/assets/golden.png';
 import { jetBrainsMono } from '@/utils/fonts';
-import minus from '@/assets/minus.svg';
-import plus from '@/assets/plus.svg';
-import wishWhite from '@/assets/wishWhite.svg';
-import plusWhite from '@/assets/plusWhite.svg';
+import { MinusIcon, PlusIcon, HeartIcon } from '@heroicons/react/24/outline';
+import Cards from '@/components/cards/Cards';
 
 function Product() {
   const [goldCount, setGoldCount] = React.useState(0);
@@ -21,28 +19,28 @@ function Product() {
 
   return (
     <section className="product py-16">
-      <div className="container mx-auto">
-        <div className="flex">
+      <div className="container mx-auto px-3">
+        <div className="flex mb-14 lg:flex-row flex-col">
           <Image
             src={golden}
             width={655}
             height={555}
             alt="gold"
-            className="basis-2/4 mr-2"
+            className="lg:basis-2/4 basis-full w-full lg:mr-2 lg:mb-0 mb-5"
           />
-          <div className="basis-2/4 p-5 bg-lightGray flex flex-col">
-            <div className="flex justify-between mb-10">
-              <h3 className="text-3xl max-w-sm text-darkGray">
+          <div className="lg:basis-2/4 basis-full p-5 bg-lightGray flex flex-col">
+            <div className="flex justify-between xl:mb-10 mb-6">
+              <h3 className="xl:text-3xl sm:text-2xl text-xl xl:max-w-sm max-w-xs text-darkGray mr-2">
                 Аффинированный мерный слиток из золота
               </h3>
               <span
-                className={`text-3xl text-orange italic ${jetBrainsMono.className}`}
+                className={`xl:text-3xl sm:text-2xl text-xl text-orange italic ${jetBrainsMono.className}`}
               >
                 10000$
               </span>
             </div>
 
-            <div className="block mb-10">
+            <div className="block xl:mb-10 mb-6">
               <div className="flex justify-between mb-2">
                 <span className="text-sm">Масса, г</span>
                 <span className={`${jetBrainsMono.className} text-base`}>
@@ -81,50 +79,40 @@ function Product() {
               </div>
             </div>
 
-            <div className="block">
+            <div className="block mb-2">
               <div className="text-sm mb-1">Количество слитков</div>
-              <div className="inline-flex items-center rounded-full border-2 py-4 px-6">
+              <div className="inline-flex items-center rounded-full border-2 xl:py-4 xl:px-6 py-2 px-4">
                 <span
                   className={`mr-6 cursor-pointer ${
                     goldCount <= 0 && 'opacity-50 pointer-events-none'
                   }`}
                 >
-                  <Image
-                    src={minus}
-                    width={24}
-                    height={24}
-                    alt="negative"
-                    onClick={onMinus}
-                  />
+                  <MinusIcon className="w-6" onClick={onMinus} />
                 </span>
                 <span className={`text-sm ${jetBrainsMono.className}`}>
                   {goldCount}
                 </span>
                 <span className="ml-6 cursor-pointer">
-                  <Image
-                    src={plus}
-                    width={24}
-                    height={24}
-                    alt="positive"
-                    onClick={onPlus}
-                  />
+                  <PlusIcon className="w-6" onClick={onPlus} />
                 </span>
               </div>
             </div>
 
             <div className="flex mt-auto">
-              <div className="rounded-full bg-orange text-white mr-2 w-full flex justify-center items-center">
+              <button className="rounded-full bg-orange text-white mr-2 w-full flex justify-center items-center">
                 Начать покупку
-              </div>
-              <div className="rounded-full p-5 bg-black2 mr-2">
-                <Image src={wishWhite} width={20} height={20} alt="wish" />
-              </div>
-              <div className="rounded-full p-5 bg-black2">
-                <Image src={plusWhite} width={20} height={20} alt="add" />
-              </div>
+              </button>
+              <button className="rounded-full xl:p-5 p-3 bg-black2 mr-2">
+                <HeartIcon className="w-5 text-white" />
+              </button>
+              <button className="rounded-full xl:p-5 p-3 bg-black2">
+                <PlusIcon className="w-5 text-white" />
+              </button>
             </div>
           </div>
         </div>
+
+        <Cards />
       </div>
     </section>
   );
