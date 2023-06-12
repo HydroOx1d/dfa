@@ -4,7 +4,7 @@ function History() {
   return (
     <section className="history py-16">
       <div className="container mx-auto px-3">
-        <div className="overflow-scroll">
+        <div className="overflow-auto">
           <table className="table-auto min-w-full text-left">
             <thead>
               <tr>

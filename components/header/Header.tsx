@@ -4,9 +4,30 @@ import React from 'react';
 import { jetBrainsMono } from '@/utils/fonts';
 import Link from 'next/link';
 import { HeartIcon, ShoppingCartIcon, Bars3CenterLeftIcon } from '@heroicons/react/24/outline';
+import { usePathname } from 'next/navigation';
 
 function Header() {
   const [navIsOpen, setNavIsOpen] = React.useState(false);
+
+  const links = [
+    {
+      id: 1,
+      href: '/',
+      name: 'Главная',
+    },
+    {
+      id: 2,
+      href: '/products',
+      name: 'Каталог',
+    },
+    {
+      id: 3,
+      href: '/history',
+      name: 'История',
+    },
+  ];
+
+  const pathname = usePathname();
 
   React.useEffect(() => {
     if (navIsOpen) {
@@ -31,24 +52,15 @@ function Header() {
           }`}
         >
           <nav className="flex flex-col justify-center px-4 pb-4 pt-20 h-full lg:h-auto lg:p-0 lg:bg-transparent lg:justify-normal lg:flex-row">
-            <Link
-              href="/"
-              className="lg:mr-10 text-3xl lg:text-base mb-16 lg:mb-0 hover:text-orange transition-colors"
-            >
-              Главная
-            </Link>
-            <Link
-              href="/products"
-              className="lg:mr-10 text-3xl lg:text-base mb-16 lg:mb-0 hover:text-orange transition-colors"
-            >
-              Каталог
-            </Link>
-            <Link
-              href="/history"
-              className="text-3xl lg:text-base mb-16 lg:mb-0 hover:text-orange transition-colors"
-            >
-              История
-            </Link>
+            {links.map((link) => (
+              <Link
+                key={link.id}
+                href={link.href}
+                className={`lg:mr-10 text-3xl lg:text-base mb-16 lg:mb-0 hover:text-orange transition-colors ${pathname === link.href ? 'text-orange' : '  '}`}
+              >
+                {link.name}
+              </Link>
+            ))}
 
             <div className="flex lg:hidden mt-auto">
               <Link
