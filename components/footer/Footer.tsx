@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer py-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 md:gap-5 gap-y-5">
           <div className={`logo ${jetBrainsMono.className} text-3xl mr-16 col-span-4 sm:col-span-4 lg:col-span-1`}>
             <span>DF</span>
             <span className="text-orange">A</span>
