@@ -1,11 +1,11 @@
+import React from 'react';
 import Cards from '@/components/cards/Cards';
 import ProductsFilter from '@/components/products_filter/ProductsFilter';
-import React from 'react';
-import cardsData from '@/api/products';
+import getProducts from '@/services/getProducts';
 
-export default function HomeComponent() {
-  const data = cardsData.slice(0, 5);
-
+export default async function HomeComponent() {
+  const res = await getProducts();
+  const data = res.slice(0, 5);
   return (
     <section className="container mx-auto mb-16">
       <div className="flex flex-col justify-items-center my-16 items-center text-center">

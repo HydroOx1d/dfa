@@ -12,9 +12,10 @@ export default function Cards({ data, linkMore }: Props) {
   return (
     <section className="flex items-center flex-col sm:grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
       {
-        data.map((el) => (
+        data ? data.map((el) => (
           <Card key={el.id} data={el} />
         ))
+          : null
       }
 
       {

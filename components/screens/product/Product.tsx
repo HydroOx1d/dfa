@@ -6,9 +6,9 @@ import golden from '@/assets/golden.png';
 import { jetBrainsMono } from '@/utils/fonts';
 import { MinusIcon, PlusIcon, HeartIcon } from '@heroicons/react/24/outline';
 import Cards from '@/components/cards/Cards';
-import cardsData from '@/api/products';
+import getProducts from '@/services/getProducts';
 
-function Product() {
+export default async function Product() {
   const [goldCount, setGoldCount] = React.useState(0);
 
   const onPlus = () => {
@@ -18,7 +18,8 @@ function Product() {
     setGoldCount((prev) => prev - 1);
   };
 
-  const data = cardsData.slice(0, 6);
+  const res = await getProducts();
+  const data = res.slice(0, 6);
 
   return (
     <section className="product py-16">
@@ -120,5 +121,3 @@ function Product() {
     </section>
   );
 }
-
-export default Product;
